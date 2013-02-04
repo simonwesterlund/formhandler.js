@@ -93,8 +93,12 @@
             jsonDict[elements[i].name] = 'Yes';
           else
             jsonDict[elements[i].name] = 'No';
+        } else if (elements[i].type === 'radio') {
+            if (elements[i].checked)
+              jsonDict[elements[i].name] = elements[i].value;
         } else
-        jsonDict[elements[i].name] = elements[i].value;
+        if (elements[i].type !== 'submit')
+          jsonDict[elements[i].name] = elements[i].value;
       }
      return jsonDict;
     },
