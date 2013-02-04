@@ -14,10 +14,11 @@ _– a simple jQuery form plugin_
                 // Some code to fadeout stuff if successful
         },
         customSubmit: $(yourCustomSubmitButton),
+        enableSubmitOnSuccess: false, // default: false.
+        disableSubmitOnSend: true, // default true.
         placeholder: true // default: true. Save all values in the form as
                           // placeholders, this is useful when you don't have
                           // access to html5 placeholders
-        preventDoublePost: true // default: true. As the name says
         validate: true // default: true. This will only validate if not empty
     }, function(r){
         // This is a callback containing all data from the fields
