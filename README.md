@@ -6,6 +6,9 @@ _– a simple jQuery form plugin_
     $(yourForm).FormHandler({
         ajax: { // default: false. This will send all data as a JSON-object
             action: '' // Path to endpoint file
+            method: '' // default: 'form'. This is the endpoint method.
+                       // i.e. the request will be:
+                       // data: {action: method, data:formData}
             success: function (r) {// Callback if got a return from endpoint.
                                    // variable r will contain the response
                 // Some code to fadeout stuff if successful
