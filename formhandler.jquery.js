@@ -62,17 +62,14 @@
   };
 
   var _methods = {
-    
     focus: function(e, obj) {
       if (obj.value === placeholders[$(obj).attr('id')])
         $(obj).val('');
     },
-
     blur: function(e, obj) {
       if (obj.value === '')
         $(obj).val(placeholders[$(obj).attr('id')]);
     },
-
     validate: function(form) {
       var err = false;
       for (var i in elements) {
@@ -88,7 +85,6 @@
       }
       return true;
     },
-
     jsonisize: function() {
       var temp = {};
       for (var i in elements) {
@@ -102,19 +98,16 @@
       }
      return temp;
     },
-
     disable: function() {
       if (options.customSubmit)
         $(options.customSubmit).addClass('disabled');
       $(form).find(':submit').attr('disabled', 'disabled');
     },
-
     enable: function() {
       if (options.customSubmit)
         $(options.customSubmit).removeClass('disabled');
       $(form).find(':submit').removeAttr('disabled');
     },
-
     send: function(data) {
       $.ajax({
         url: options.ajax.action,
@@ -135,7 +128,6 @@
   };
   
   $.fn.FormHandler = function(method, callback) {
-
     if (typeof method === 'object') {
       return methods.init.apply(this,
                                 arguments, callback);
@@ -143,6 +135,5 @@
       return methods.init.apply(this);
     else
       $.error('Unable to call method "' + method + '"');
-
   };
 })(jQuery);
