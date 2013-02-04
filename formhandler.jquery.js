@@ -1,5 +1,5 @@
 ;(function($) {
-
+  "use strict";
   var placeholders = [],
       elements = [],
       form = null,
