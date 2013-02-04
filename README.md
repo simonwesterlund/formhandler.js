@@ -2,12 +2,12 @@ formhandler.js
 ==============
 _– a simple jQuery form plugin_
 
-# Usage
+## Usage
     $(yourForm).FormHandler({
         ajax: { // default: false. This will send all data as a JSON-object
             action: '' // Path to endpoint file
-            success: function (r) {// Callback if got a return from endpoint
-                                   // r will contain the response
+            success: function (r) {// Callback if got a return from endpoint.
+                                   // variable r will contain the response
                 // Some code to fadeout stuff if successful
         },
         customSubmit: $(yourCustomSubmitButton),
