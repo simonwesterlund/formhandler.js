@@ -86,17 +86,17 @@
       return true;
     },
     jsonisize: function() {
-      var temp = {};
+      var jsonDict = {};
       for (var i in elements) {
         if (elements[i].type === 'checkbox') {
           if (elements[i].checked)
-            temp[elements[i].name] = 'Yes';
+            jsonDict[elements[i].name] = 'Yes';
           else
-            temp[elements[i].name] = 'No';
+            jsonDict[elements[i].name] = 'No';
         } else
-        temp[elements[i].name] = elements[i].value;
+        jsonDict[elements[i].name] = elements[i].value;
       }
-     return temp;
+     return jsonDict;
     },
     disable: function() {
       if (options.customSubmit)
