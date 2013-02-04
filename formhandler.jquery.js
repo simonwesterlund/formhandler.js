@@ -14,8 +14,9 @@
       options = $.extend({
         'ajax': false,
         'customSubmit': false,
+        'enableSubmitOnSuccess': false,
+        'disableSubmitOnSend': true,
         'placeholder': true,
-        'preventDoublePost': true,
         'validate': true
       }, _options);
 
@@ -49,7 +50,8 @@
           return;
         if ((options.validate && _methods.validate(this)) ||
             !options.validate) {
-          _methods.disable();
+          if (options.disableSubmitOnSend)
+            _methods.disable();
           options.isSending = true;
           var result = _methods.jsonisize();
           if (callback)
@@ -123,7 +125,8 @@
         },
         success: function(r) {
           options.isSending = false;
-          //_methods.enable();
+          if (options.enableSubmitOnSuccess)
+            _methods.enable();
           if (options.ajax.success)
             options.ajax.success(r);
         }
