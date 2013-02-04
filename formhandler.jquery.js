@@ -118,7 +118,7 @@
         type: 'post',
         dataType: 'json',
         data: {
-          action: 'form',
+          action: options.ajax.method || 'form',
           data: JSON.stringify(data)
         },
         success: function(r) {
