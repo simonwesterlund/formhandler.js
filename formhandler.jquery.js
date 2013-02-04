@@ -129,8 +129,7 @@
   
   $.fn.FormHandler = function(method, callback) {
     if (typeof method === 'object') {
-      return methods.init.apply(this,
-                                arguments, callback);
+      return methods.init.apply(this, arguments, callback);
     } else if (typeof method === 'undefined')
       return methods.init.apply(this);
     else
