@@ -121,7 +121,7 @@
         dataType: 'json',
         data: {
           action: options.ajax.method || 'form',
-          data: JSON.stringify(data)
+          data: data
         },
         success: function(r) {
           options.isSending = false;
