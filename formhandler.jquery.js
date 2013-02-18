@@ -96,6 +96,10 @@
       }
       return true;
     },
+    isPhone: function(obj) {
+      obj = obj.replace(/[^0-9+]*/g, '');
+      return obj.match(/(07|\+467)([0-9]{8,8}$)/g) ? true : false;
+    },
     jsonisize: function() {
       var jsonDict = {};
       for (var i in elements) {
