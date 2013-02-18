@@ -76,9 +76,20 @@
       var err = false;
       for (var i in elements) {
         var element = elements[i];
-        if (element.type === 'checkbox' ||
-            element.type === 'radio')
+        if (element.type === 'checkbox')
           continue;
+        if (element.type === 'radio' && $(element).attr('required')) {
+          var radios = document.getElementsByName(element.name);
+          var checked = false;
+          for (var j in radios) {
+            if (radios[j].checked)
+              checked = true;
+          }
+          if (!checked) {
+            element.focus();
+            return false;
+          }
+        }
         if (element.value === placeholders[$(element).attr('id')] &&
             $(element).attr('required')) {
           element.focus();
