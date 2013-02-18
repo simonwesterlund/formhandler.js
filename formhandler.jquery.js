@@ -84,6 +84,15 @@
           element.focus();
           return false;
         }
+        if ($(element).attr('validate')) {
+          var method = $(element).attr('validate');
+          method = method.charAt(0).toUpperCase() + method.substr(1, method.length);
+          if (typeof _methods['is' + method] != 'undefined') {
+            if (!_methods['is' + method](element.value)) {
+              element.focus();
+            }
+          }
+        }
       }
       return true;
     },
