@@ -78,7 +78,8 @@
       var err = false;
       for (var i in elements) {
         var element = elements[i];
-        if (element.type === 'checkbox')
+        if (element.type === 'checkbox' ||
+            element.type === 'submit')
           continue;
         if (element.type === 'radio' && $(element).attr('required')) {
           var radios = document.getElementsByName(element.name);
