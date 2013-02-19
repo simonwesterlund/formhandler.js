@@ -99,8 +99,13 @@
           var method = $(element).attr('validate');
           method = method.charAt(0).toUpperCase() + method.substr(1, method.length);
           if (typeof _methods['is' + method] != 'undefined') {
-            if (!_methods['is' + method](element.value)) {
+            var obj = _methods['is' + method](element.value);
+            if (!obj) {
               element.focus();
+              return false;
+            } else {
+              if (typeof obj === 'string')
+                element.value = obj;
             }
           }
         }
