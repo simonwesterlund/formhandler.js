@@ -26,8 +26,25 @@ And then, call the plugin like this:
         placeholder: true // default: true. Save all values in the form as
                           // placeholders, this is useful when you don't have
                           // access to html5 placeholders
-        validate: true // default: true. This will only validate if not empty
+        validate: true // default: true. Check for "required" attributes, that
+                       // are not empty
     }, function(r){
         // This is a callback containing all data from the fields
         // r = {"field_name": "field_value", "checkbox_name": "checked"} etc.
     });
+
+#### Required
+For example:
+
+    <input required>
+must not be empty.
+
+#### Validation
+It is also possible to validate forms, like this:
+
+    <input validate="phone">
+will validate a text input as a phone number.
+
+Valid validator types are (currently):
+
+* phone (currently only swedish)
