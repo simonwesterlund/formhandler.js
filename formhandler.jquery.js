@@ -114,7 +114,12 @@
     },
     isPhone: function(obj) {
       obj = obj.replace(/[^0-9+]*/g, '');
-      return obj.match(/(07|\+467)([0-9]{8,8}$)/g) ? true : false;
+      var regex = /(07|\+467)([0-9]{8,8}$)/g;
+      return regex.test(obj) ? obj : false;
+    },
+    isEmail: function(obj) {
+      var regex = /^[a-zA-Z\-_.]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+      return regex.test(obj);
     },
     jsonisize: function() {
       var jsonDict = {};
