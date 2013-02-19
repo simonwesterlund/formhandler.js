@@ -48,3 +48,4 @@ will validate a text input as a phone number.
 Valid validator types are (currently):
 
 * phone (currently only swedish)
+* email
