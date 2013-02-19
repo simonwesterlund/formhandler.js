@@ -25,6 +25,8 @@
       });
 
       for (var i in elements) {
+        if (elements[i].type === 'submit')
+          continue;
         if (elements[i].type !== 'checkbox' &&
             elements[i].type !== 'radio') {
           placeholders[i] = elements[i].value;
